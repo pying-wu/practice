@@ -8,21 +8,6 @@ import java.util.List;
 
 public class IdVerifyHelper {
 
-//	private String filename;
-//	public IdVerifyHelper(String filename) {
-//		this.filename = filename;
-//	}
-//
-//    public IdVerifyHelper(String filename) {
-//    	System.out.println("先跑建構子");
-//        validate(filename);
-//    }
-//
-//	public static void main(String[] args) {
-//		System.out.println("先跑MAIN");
-//		new IdVerifyHelper("src/verify/idList2.txt");
-//	}
-
 	public List<VerifyResult> validate(String filename) {
 		List<VerifyResult> resultList = new ArrayList<>();
 		int[] letterNums = { 10, 11, 12, 13, 14, 15, 16, 17, 34, 18, 19, 20, 21, 22, 35, 23, 24, 25, 26, 27, 28, 29, 32,
