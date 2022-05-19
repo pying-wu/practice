@@ -20,7 +20,7 @@ public class TestIdValidate {
 		System.out.println("======  VerifyHelperC01  ======");
 		System.out.println("");
 
-		VerifyHelperC01 helper1 = new VerifyHelperC01();
+		IdVerifyHelper helper1 = new VerifyHelperC01();
 		List<VerifyResult> resultList1 = helper1.validate("src/verify/idList3.txt");
 
 		for (VerifyResult result : resultList1) {
@@ -36,7 +36,7 @@ public class TestIdValidate {
 		System.out.println("====== VerifyHelperC02 開始 ======");
 		System.out.println("");
 
-		VerifyHelperC02 helper2 = new VerifyHelperC02();
+		IdVerifyHelper helper2 = new VerifyHelperC02();
 		List<VerifyResult> resultList2 = helper2.validate("src/verify/idList3.txt");
 
 		for (VerifyResult result : resultList2) {
