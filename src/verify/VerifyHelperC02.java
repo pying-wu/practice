@@ -21,7 +21,7 @@ public class VerifyHelperC02 extends IdVerifyHelper {
 				VerifyResult vr = new VerifyResult();
 				vr.setId(s);
 				System.out.println("====您輸入的身分證字號 " + s + "====");
-				if (s.matches("^[a-z0-9A-Z\u4e00-\u9fa5]+$")) {
+				if (s.matches("^[a-z0-9A-Z]")) {
 					if (s.charAt(1) == '1' || s.charAt(1) == '2') {
 						char letter = s.toUpperCase().charAt(0);
 						s = letterNums[letter - 'A'] + s.substring(1);
