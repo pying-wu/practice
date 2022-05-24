@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo1.model.Member;
-import com.example.demo1.model.Teacher;
 import com.example.demo1.repository.MemberRepository;
 
 @Service

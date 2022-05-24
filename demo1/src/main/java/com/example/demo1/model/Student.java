@@ -1,9 +1,11 @@
 package com.example.demo1.model;
 
 import javax.persistence.Column;
-import javax.persistence.Table;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-@Table
+@Entity
+@DiscriminatorValue(value = "s")
 public class Student extends Member {
 
 	@Column(name = "CLASS")
