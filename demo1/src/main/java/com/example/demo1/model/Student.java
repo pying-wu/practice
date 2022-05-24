@@ -1,8 +1,14 @@
 package com.example.demo1.model;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+@Table
 public class Student extends Member {
 
+	@Column(name = "CLASS")
 	private String class1;
+	@Column(name = "ADMISSION_YEAR_MONTH")
 	private String admissionYearMonth;
 
 	public String getClass1() {
