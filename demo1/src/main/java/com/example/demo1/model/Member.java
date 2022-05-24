@@ -25,6 +25,9 @@ public class Member {
 	private String class1;
 	@Column(name = "ADMISSION_YEAR_MONTH")
 	private String admissionYearMonth;
+	
+	@Column(name = "ROLE")
+	private String role;
 
 	public String getId() {
 		return id;
@@ -81,5 +84,15 @@ public class Member {
 	public void setAdmissionYearMonth(String admissionYearMonth) {
 		this.admissionYearMonth = admissionYearMonth;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 
 }

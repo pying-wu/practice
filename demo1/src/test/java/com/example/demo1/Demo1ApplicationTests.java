@@ -26,6 +26,8 @@ class Demo1ApplicationTests {
 			System.out.println(list.getSubject());
 			System.out.println(list.getClass1());
 			System.out.println(list.getAdmissionYearMonth());
+			System.out.println(list.getRole());
+			System.out.println();
 		}
 		System.out.println("member: " + memberService.getAllMember());
 		List<Member> allteacher = memberService.getAllTeacher();
