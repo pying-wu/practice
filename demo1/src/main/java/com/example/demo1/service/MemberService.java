@@ -39,12 +39,12 @@ public class MemberService {
 		return memberDao.findAllStudent();
 	}
 
-	public Member findTeacherById(String teacherId) {
+	public List<Member> findTeacherById(String teacherId) {
 
 		return memberDao.findTeacherById(teacherId);
 	}
 
-	public Member findStudentById(String studentId) {
+	public List<Member> findStudentById(String studentId) {
 
 		return memberDao.findStudentById(studentId);
 	}
@@ -81,7 +81,7 @@ public class MemberService {
 //		mRepository.getAllStudent().forEach(allStudent::add);
 //		return allStudent;
 //	}
-//
+
 	public Member getTeacher(String teacherId) {
 		return memberRepository.getTeacher(teacherId);
 	}

@@ -9,6 +9,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.springframework.web.context.annotation.ApplicationScope;
+
 import lombok.Data;
 
 @Entity
@@ -37,6 +39,7 @@ public class Member {
 	private String admissionYearMonth;
 	@Column(name = "ROLE")
 	private String role;
+	
 
 	public String getId() {
 		return id;

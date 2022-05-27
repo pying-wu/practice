@@ -43,7 +43,7 @@ public class MemberDao {
 		CriteriaQuery<Member> criteriaQuery = criteriaBuilder.createQuery(Member.class);
 		Root<Member> root = criteriaQuery.from(Member.class);
 
-		Predicate predRole = criteriaBuilder.equal(root.get("role"), "Ab");
+		Predicate predRole = criteriaBuilder.equal(root.get("role"), "t");
 		criteriaQuery.where(predRole);
 		TypedQuery<Member> tq = entityManager.createQuery(criteriaQuery);
 
@@ -69,7 +69,7 @@ public class MemberDao {
 
 	}
 
-	public Member findTeacherById(String teacherId) {
+	public List<Member> findTeacherById(String teacherId) {
 
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<Member> criteriaQuery = criteriaBuilder.createQuery(Member.class);
@@ -80,12 +80,12 @@ public class MemberDao {
 		criteriaQuery.where(predRole, predId);
 
 		TypedQuery<Member> tq = entityManager.createQuery(criteriaQuery);
-		Member teacher = tq.getSingleResult();
+		List<Member> teacher = tq.getResultList();
 
 		return teacher;
 	}
 
-	public Member findStudentById(String studentId) {
+	public List<Member> findStudentById(String studentId) {
 
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<Member> criteriaQuery = criteriaBuilder.createQuery(Member.class);
@@ -96,7 +96,7 @@ public class MemberDao {
 		criteriaQuery.where(predRole, predId);
 
 		TypedQuery<Member> tq = entityManager.createQuery(criteriaQuery);
-		Member student = tq.getSingleResult();
+		List<Member> student = tq.getResultList();
 
 		return student;
 	}
