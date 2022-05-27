@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo1.model.Member;
@@ -18,116 +17,76 @@ public class MemberController {
 
 	@RequestMapping("/rest/all-member")
 	public List<Member> getAllMember() {
-		System.err.println("====執行getAllMember===");
-		return memberService.getAllMember();
+		List<Member> list = memberService.findAllM();
+		return list;
 	}
 
 	@RequestMapping("/rest/all-teacher")
-	public List<Member> getAllTeacher() {
-		System.err.println("====執行getAllTeacher===");
-		return memberService.getAllTeacher();
-//		List<Member> memberList = new ArrayList<Member>();
-//		mService.getAllTeacher();
-//		System.out.println(mList);
-//		List<Member> li = new ArrayList<>();
-//		for (Member mem1 : memberList) {
-//			if (mem1 instanceof Teacher) {
-//				Teacher mem = new Teacher();
-//				String id1 = mem1.getId();
-//				String name1 = mem1.getName();
-//				String gender1 = mem1.getGender();
-//				String subject1 = ((Teacher) mem1).getSubject();
-//				String job1 = ((Teacher) mem1).getJobTitle();
-//				mem.setId(id1);
-//				mem.setGender(gender1);
-//				mem.setName(name1);
-//				mem.setSubject(subject1);
-//				mem.setJobTitle(job1);
-//				li.add(mem);
-//			} else {
-//			}
-//		}
-//		return li;
+	public List<Member> getAllTeacher() throws DataNotFoundException {
+		List<Member> list = memberService.findAllTeacher();
+		if (list.size() > 0) {
+			return list;
+		} else {
+			throw new DataNotFoundException("查無任何教師資料");
+		}
 	}
 
 	@RequestMapping("/rest/all-student")
-	public List<Member> getAllStudent() {
-		System.err.println("====執行getAllTeacher===");
-		return memberService.getAllStudent();
-//		List<Member> memberList = new ArrayList<>();
-////		memberList = addlist();
-//		List<Member> li = new ArrayList<>();
-//		for (Member mem1 : memberList) {
-//			if (mem1 instanceof Student) {
-//				Student student = new Student();
-//				String id1 = mem1.getId();
-//				String name1 = mem1.getName();
-//				String gender1 = mem1.getGender();
-//				String class11 = ((Student) mem1).getClass1();
-//				String year1 = ((Student) mem1).getAdmissionYearMonth();
-//				student.setId(id1);
-//				student.setName(name1);
-//				student.setGender(gender1);
-//				student.setClass1(class11);
-//				student.setAdmissionYearMonth(year1);
-//				li.add(student);
-//			} else {
-//			}
-//		}
-//		return li;
+	public List<Member> getAllStudent() throws DataNotFoundException {
+		List<Member> list = memberService.findAllStudent();
+		if (list.size() > 0) {
+			return list;
+		} else {
+			throw new DataNotFoundException("查無任何學生資料");
+		}
 	}
 
-//	@RequestMapping("/rest/Id")
-//	public List<Member> QueryById(String id) {
-//		return null;
-//	}
-
 	@RequestMapping("/rest/teacherId")
-	public Member getTeacher(@RequestParam String teacherId) {
-		return memberService.getTeacher(teacherId);
+	public Member getTeacher(String teacherId) throws DataNotFoundException {
+		Member teacher = memberService.findTeacherById(teacherId);
+		if (teacher != null) {
+			return teacher;
+		} else {
+			throw new DataNotFoundException();
+		}
+
 	}
 
 	@RequestMapping("/rest/studentId")
-	public Member getStudent(@RequestParam String studentId) {
-		return memberService.getStudent(studentId);
+	public Member getStudent(String studentId) throws DataNotFoundException {
+		Member student = memberService.findStudentById(studentId);
+		if (student != null) {
+			return student;
+		} else {
+			throw new DataNotFoundException();
+		}
 	}
 
-//	@RequestMapping("/rest/student")
-//	public List<Member> findMember3(@RequestParam String id) {
-//		List<Member> memberList = new ArrayList<>();
-////		memberList = addlist();
-//		List<Member> li = new ArrayList<>();
-//		for (Member mem1 : memberList) {
-//			if ((mem1.getId()).equals(id)) {
-//				if (mem1 instanceof Teacher) {
-//					Teacher mem = new Teacher();
-//					String id1 = mem1.getId();
-//					String name1 = mem1.getName();
-//					String gender1 = mem1.getGender();
-//					String subject1 = ((Teacher) mem1).getSubject();
-//					String job1 = ((Teacher) mem1).getJobTitle();
-//					mem.setId(id1);
-//					mem.setGender(gender1);
-//					mem.setName(name1);
-//					mem.setSubject(subject1);
-//					mem.setJobTitle(job1);
-//					li.add(mem);
-//				} else {
-//					Student student = new Student();
-//					String id1 = mem1.getId();
-//					String name1 = mem1.getName();
-//					String gender1 = mem1.getGender();
-//					String class11 = ((Student) mem1).getClass1();
-//					String year1 = ((Student) mem1).getAdmissionYearMonth();
-//					student.setId(id1);
-//					student.setName(name1);
-//					student.setGender(gender1);
-//					student.setClass1(class11);
-//					student.setAdmissionYearMonth(year1);
-//					li.add(student);
-//				}
-//			}
-//		}
-//		return li;
-//	}
+	@RequestMapping("/rest/insert")
+	public Member insertMember() throws DataNotFoundException {
+		if (memberService.findById() != null) {
+			Member newdata = memberService.insertMember();
+			return newdata;
+		} else {
+			throw new DataNotFoundException("資料庫已有此資料!");
+		}
+	}
+
+	@RequestMapping("/rest/update")
+	public Member updateMember() {
+		Member newdata = memberService.updateMember();
+		return newdata;
+	}
+
+	@RequestMapping("/rest/delete")
+	public List<Member> deleMember() throws DataNotFoundException {
+		if (memberService.DfindById() != null) {
+			memberService.deleteMember();
+			List<Member> newdata = memberService.findAllM();
+			return newdata;
+		} else {
+			throw new DataNotFoundException("資料庫中無此資料!");
+		}
+	}
+
 }

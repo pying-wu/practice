@@ -1,11 +1,12 @@
 package com.example.demo1.model;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
 
-@Entity
-@DiscriminatorValue(value = "s")
+import lombok.Data;
+
+//@Entity
+//@DiscriminatorValue(value = "s")
+@Data
 public class Student extends Member {
 
 	@Column(name = "CLASS")
