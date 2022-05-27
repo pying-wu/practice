@@ -3,14 +3,15 @@ package com.example.demo1.service;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo1.model.Member;
-import com.example.demo1.repository.MemberDao;
 
 @SpringBootTest
 class Testservice {
