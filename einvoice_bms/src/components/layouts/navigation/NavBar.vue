@@ -105,6 +105,24 @@ const menuList = [
       },
     ],
   },
+  {
+    url: "#",
+    name: "活動紀錄",
+    subList: [
+      {
+         url: "/activity/1",
+         name: "活動一",
+      },
+      {
+         url: "/activity/2",
+         name: "活動二",
+      },
+      {
+         url: "/activity/3",
+         name: "活動三",
+      },
+    ],
+  },
 ];
 
 // 獲取username

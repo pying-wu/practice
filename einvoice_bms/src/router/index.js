@@ -147,8 +147,31 @@ const routes = [{
       title: '使用'
     },
     component: () => import('../views/user/User3.vue')
+  },
+  {
+    path: '/activity/1',
+    name: '活動一',
+    meta: {
+      title: '活動紀錄'
+    },
+    component: () => import('../views/activity/Activity1.vue')
+  },
+  {
+    path: '/activity/2',
+    name: '活動二',
+    meta: {
+      title: '活動紀錄'
+    },
+    component: () => import('../views/activity/Activity2.vue')
+  },
+  {
+    path: '/activity/3',
+    name: '活動三',
+    meta: {
+      title: '活動紀錄'
+    },
+    component: () => import('../views/activity/Activity3.vue')
   }
-
 ]
 
 // const routes = [
