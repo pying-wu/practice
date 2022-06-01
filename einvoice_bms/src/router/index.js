@@ -149,28 +149,36 @@ const routes = [{
     component: () => import('../views/user/User3.vue')
   },
   {
-    path: '/activity/1',
-    name: '活動一',
+    path: '/apconsumer/1',
+    name: '載具中獎發票查詢',
     meta: {
-      title: '活動紀錄'
+      title: '載具(卡片)專區'
     },
-    component: () => import('../views/activity/Activity1.vue')
+    component: () => import('../views/apconsumer/Apconsumer1.vue')
   },
   {
-    path: '/activity/2',
-    name: '活動二',
+    path: '/apconsumer/2',
+    name: '載具消費發票查詢',
     meta: {
-      title: '活動紀錄'
+      title: '載具(卡片)專區'
     },
-    component: () => import('../views/activity/Activity2.vue')
+    component: () => import('../views/apconsumer/Apconsumer2.vue')
   },
   {
-    path: '/activity/3',
-    name: '活動三',
+    path: '/apconsumer/3',
+    name: '載具中獎通知設定',
     meta: {
-      title: '活動紀錄'
+      title: '載具(卡片)專區'
     },
-    component: () => import('../views/activity/Activity3.vue')
+    component: () => import('../views/apconsumer/Apconsumer3.vue')
+  },
+  {
+    path: '/testimage/',
+    name: '測試驗證圖片',
+    meta: {
+      title: '測試驗證圖片'
+    },
+    component: () => import('../views/apconsumer/Sidentify.vue')
   }
 ]
 

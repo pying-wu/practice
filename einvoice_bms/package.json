@@ -22,6 +22,10 @@
     "cors": "^2.8.5",
     "el-breadcrumb": "^1.0.1",
     "element-plus": "^2.1.9",
+    "events": "^3.3.0",
+    "identify": "^0.1.5",
+    "js-md5": "^0.7.3",
+    "md5": "^2.3.0",
     "path-to-regexp": "^6.2.0",
     "vee-validate": "^4.5.10",
     "vue": "^3.2.31",
@@ -39,7 +43,10 @@
     "@vue/cli-plugin-router": "^5.0.3",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
+    "webpack": "^5.72.1"
   },
   "eslintConfig": {
     "root": true,

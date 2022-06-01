@@ -107,19 +107,19 @@ const menuList = [
   },
   {
     url: "#",
-    name: "活動紀錄",
+    name: "載具(卡片)專區",
     subList: [
       {
-         url: "/activity/1",
-         name: "活動一",
+         url: "/apconsumer/1",
+         name: "載具中獎發票查詢",
       },
       {
-         url: "/activity/2",
-         name: "活動二",
+         url: "/apconsumer/2",
+         name: "載具消費發票查詢",
       },
       {
-         url: "/activity/3",
-         name: "活動三",
+         url: "/apconsumer/3",
+         name: "載具中獎通知設定",
       },
     ],
   },
